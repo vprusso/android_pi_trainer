@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="0dp"
+    android:paddingBottom="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:background="@drawable/gradient_background"
+    tools:context="captainhampton.pi.trainer.MainActivity">
+
+    <!--<ScrollView-->
+    <!--android:id="@+id/scrollViewMainMenu"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:scrollbars="vertical"-->
+    <!--android:background="@drawable/gradient_background"-->
+    <!--android:fillViewport="true">-->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom"
+        android:paddingLeft="0dp"
+        android:paddingBottom="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="0dp"
+        android:background="@drawable/gradient_background">
+
+        <TextView
+            android:id="@+id/textViewPiTrainerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:text="@string/pi_trainer_title"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/circleButtonTrain"
+            android:layout_height="128dp"
+            android:layout_width="128dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/textViewPiTrainerTitle"
+            app:cb_color="@android:color/holo_orange_light"
+            app:cb_pressedRingWidth="16dp"
+            android:src="@drawable/ic_button_train"/>
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/circleButtonMarathon"
+            android:layout_height="128dp"
+            android:layout_width="128dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/circleButtonTrain"
+            app:cb_color="@android:color/holo_orange_light"
+            app:cb_pressedRingWidth="16dp"
+            android:src="@drawable/ic_button_marathon"/>
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/circleButtonMemorize"
+            android:layout_height="128dp"
+            android:layout_width="128dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/circleButtonMarathon"
+            app:cb_color="@android:color/holo_orange_light"
+            app:cb_pressedRingWidth="16dp"
+            android:src="@drawable/ic_button_memorize"/>
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/circleButtonAbout"
+            android:layout_height="128dp"
+            android:layout_width="128dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/circleButtonMemorize"
+            app:cb_color="@android:color/holo_orange_light"
+            app:cb_pressedRingWidth="16dp"
+            android:src="@drawable/ic_button_about"/>
+
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/mainAdView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id">
+        </com.google.android.gms.ads.AdView>
+
+
+    </RelativeLayout>
+    <!--</ScrollView>-->
+
+
+</LinearLayout>

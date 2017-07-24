@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">PiTrainer</string>
+
+    <string name="banner_ad">Banner Ad</string>
+    <string name="interstitial_ad">Interstitial Ad</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string name="interstitial_load">Load Interstitial</string>
+    <string name="interstitial_not_ready">Interstitial Not Ready</string>
+    <string name="interstitial_loading">Loading Interstitial</string>
+    <string name="interstitial_show">Show Interstitial</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string name="pi_trainer_title">Pi Trainer</string>
+
+    <string name="train">Train</string>
+    <string name="marathon">Marathon</string>
+    <string name="memorize">Memorize</string>
+    <string name="about">About</string>
+
+</resources>

@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import at.markushi.ui.CircleButton;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
@@ -16,6 +19,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        displayBannerAd();
         setupVariables();
     }
 
@@ -57,5 +62,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(aboutIntent);
         }
 
+    }
+
+    public void displayBannerAd() {
+        AdView adView = (AdView)findViewById(R.id.mainAdView);
+        //AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        adView.loadAd(adRequest);
     }
 }

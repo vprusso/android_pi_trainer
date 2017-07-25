@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"  >
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="300dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAbout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textColor="#FFFFFF">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvAboutContent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=
+                    "	Pi Trainer is an application that allows you to memorize digits of the irrational number pi. The more digits of pi you can recall, the more girls will be impressed.
+	In 'Marathon Mode', you'll enter the digits of pi, but if you enter one of the digits incorrectly, you'll have to start over. In the 'Trainer Mode', entering an incorrect digit does not push you back to start.
+	In the 'Memorize' section, you can look through the digits of pi and even have them read to you for your training."
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF">
+            </TextView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+
+</LinearLayout>

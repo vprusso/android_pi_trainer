@@ -33,7 +33,7 @@ public class Train extends AppCompatActivity implements OnClickListener {
             "102701938521105559644622948954930381964428810975665933446128475648233786783165271201" +
             "909145648566923460348610454326648213393607260249141273724587006";
 
-    int highScore = 0, highestScore = 0, count;
+    int highScore = 0, highestScore = 0, count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -28,10 +28,8 @@ public class Train extends AppCompatActivity implements OnClickListener {
     AdRequest adRequest;
 
     String userInput = "";
-    String pi = "3.141592653589793238462643383279502884197169399375105820974944592307816406286208" +
-            "998628034825342117067982148086513282306647093844609550582231725359408128481117450284" +
-            "102701938521105559644622948954930381964428810975665933446128475648233786783165271201" +
-            "909145648566923460348610454326648213393607260249141273724587006";
+    String pi;
+
 
     int highScore = 0, highestScore = 0, count = 0;
 
@@ -82,6 +80,7 @@ public class Train extends AppCompatActivity implements OnClickListener {
         textViewHighScore = (TextView)findViewById(R.id.textViewHighScore);
         textViewCurrentDigit = (TextView)findViewById(R.id.textViewCurrentDigit);
         vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+        pi = getResources().getString(R.string.pi_digits);
 
     }
 
@@ -191,7 +190,7 @@ public class Train extends AppCompatActivity implements OnClickListener {
     }
 
     private boolean isCorrectInput(Character piDigit) {
-
+        pi = pi.replaceAll("\\s+","");
         if (piDigit == pi.charAt(count)) {
             count++;
             textViewCurrentDigit.setText(String.format(Locale.US, "%d", count));
@@ -201,7 +200,6 @@ public class Train extends AppCompatActivity implements OnClickListener {
     }
 
     private void incorrectInput(Character incorrectDigit) {
-
         // Vibrate phone to indicate loss.
         vibrator.vibrate(500);
     }

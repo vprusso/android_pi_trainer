@@ -3,7 +3,6 @@ package captainhampton.pi.trainer;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -15,6 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.Locale;
 
 public class Marathon extends AppCompatActivity implements OnClickListener {
@@ -25,6 +27,9 @@ public class Marathon extends AppCompatActivity implements OnClickListener {
     TextView textViewHighScore, textViewHighestScore, textViewCurrentDigit;
     Vibrator vibrator;
 
+    AdView adView;
+    AdRequest adRequest;
+
     //Facebook fb;
     //AsyncFacebookRunner asyncRunner;
 
@@ -33,7 +38,7 @@ public class Marathon extends AppCompatActivity implements OnClickListener {
     final Context context = this;
 
     String userInput = "";
-    String pi = "3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128481117450284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273724587006";
+    String pi;
     int highScore = 0, highestScore = 0, count = 0;
 
     /** Called when the activity is first created. */
@@ -42,6 +47,7 @@ public class Marathon extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.marathon);
         setupVariables();
+        displayBannerAd();
     }
 
     private void setupVariables() {
@@ -102,9 +108,9 @@ public class Marathon extends AppCompatActivity implements OnClickListener {
         //textViewHighestScore = (TextView)findViewById(R.id.textViewHighestScore);
 
         vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+        pi = getResources().getString(R.string.pi_digits);
 
     }
-
 
     @Override
     public void onClick(View v) {
@@ -212,7 +218,7 @@ public class Marathon extends AppCompatActivity implements OnClickListener {
     }
 
     private boolean isCorrectInput(Character piDigit) {
-
+        pi = pi.replaceAll("\\s+","");
         if (piDigit == pi.charAt(count)) {
             count++;
             textViewCurrentDigit.setText(String.format(Locale.US, "%d", count));
@@ -222,7 +228,7 @@ public class Marathon extends AppCompatActivity implements OnClickListener {
     }
 
     private void incorrectInput(Character incorrectDigit) {
-
+        pi = pi.replaceAll("\\s+","");
         // Vibrate phone to indicate loss.
         vibrator.vibrate(500);
 
@@ -231,23 +237,23 @@ public class Marathon extends AppCompatActivity implements OnClickListener {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 
         alertDialogBuilder.setTitle("Try Again?");
-//        alertDialogBuilder.setMessage("Score: "+count+"\n" + "You entered "+ incorrectDigit +", instead of " + pi.charAt(count)  + " \n").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//
-//            public void onClick(DialogInterface dialog, int id) {
-//                updateHighScore();
-//                etPi.setText("");
-//                userInput = "";
-//                count = 0;
-//            }
-//        }).setNeutralButton("Post to Facebook", new DialogInterface.OnClickListener() {
-//
-//            public void onClick(DialogInterface dialog, int which) {
-//
-//                etPi.setText("");
-//                userInput = "";
-//                int fbCount = count;
-//                count = 0;
-//
+        alertDialogBuilder.setMessage("Score: "+count+"\n" + "You entered "+ incorrectDigit +", instead of " + pi.charAt(count)  + " \n").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int id) {
+                updateHighScore();
+                editTextPi.setText("");
+                userInput = "";
+                count = 0;
+            }
+        }).setNeutralButton("Post to Facebook", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+
+                editTextPi.setText("");
+                userInput = "";
+                int fbCount = count;
+                count = 0;
+
 //                // Post score to High Score to Facebook
 //                if (Utility.fb.isSessionValid()) {
 //                    //button close our session - log out of facebook
@@ -298,17 +304,17 @@ public class Marathon extends AppCompatActivity implements OnClickListener {
 //
 //                    });
 //                }
-//            }
-//        })
-//                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-//
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        Marathon.this.finish();
-//                    }
-//                });
-//
-//        AlertDialog alertDialog = alertDialogBuilder.create();
-//        alertDialog.show();
+            }
+        })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Marathon.this.finish();
+                    }
+                });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
 
     }
 
@@ -326,5 +332,13 @@ public class Marathon extends AppCompatActivity implements OnClickListener {
             highScore = count;
             textViewHighScore.setText(String.format(Locale.US, "%d", highScore));
         }
+    }
+
+    public void displayBannerAd() {
+        adView = (AdView)findViewById(R.id.adMarathon);
+        //AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        adRequest = new AdRequest.Builder().build();
+
+        adView.loadAd(adRequest);
     }
 }

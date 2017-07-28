@@ -44,45 +44,88 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
-        <at.markushi.ui.CircleButton
+        <Button
             android:id="@+id/circleButtonTrain"
-            android:layout_height="128dp"
-            android:layout_width="128dp"
-            android:layout_centerInParent="true"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:text="@string/train"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp"
             android:layout_below="@+id/textViewPiTrainerTitle"
-            app:cb_color="@android:color/holo_orange_light"
-            app:cb_pressedRingWidth="16dp"
-            android:src="@drawable/ic_button_train"/>
+            android:layout_alignStart="@+id/mainAdView"
+            />
 
-        <at.markushi.ui.CircleButton
+        <!--<at.markushi.ui.CircleButton-->
+            <!--android:id="@+id/circleButtonTrain"-->
+            <!--android:layout_height="128dp"-->
+            <!--android:layout_width="128dp"-->
+            <!--app:cb_color="@android:color/holo_green_light"-->
+            <!--app:cb_pressedRingWidth="16dp"-->
+            <!--android:text="Test"-->
+            <!--android:layout_below="@+id/textViewPiTrainerTitle"-->
+            <!--android:layout_alignStart="@+id/mainAdView" />-->
+
+        <Button
             android:id="@+id/circleButtonMarathon"
-            android:layout_height="128dp"
-            android:layout_width="128dp"
-            android:layout_centerInParent="true"
-            android:layout_below="@+id/circleButtonTrain"
-            app:cb_color="@android:color/holo_orange_light"
-            app:cb_pressedRingWidth="16dp"
-            android:src="@drawable/ic_button_marathon"/>
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:text="@string/marathon"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp"
+            android:layout_below="@+id/textViewPiTrainerTitle"
+            android:layout_alignEnd="@+id/mainAdView" />
 
-        <at.markushi.ui.CircleButton
+        <!--<at.markushi.ui.CircleButton-->
+            <!--android:id="@+id/circleButtonMarathon"-->
+            <!--android:layout_height="128dp"-->
+            <!--android:layout_width="128dp"-->
+            <!--app:cb_color="@android:color/holo_orange_light"-->
+            <!--app:cb_pressedRingWidth="16dp"-->
+            <!--android:src="@drawable/ic_button_marathon"-->
+            <!--android:layout_below="@+id/textViewPiTrainerTitle"-->
+            <!--android:layout_alignEnd="@+id/mainAdView" />-->
+
+        <Button
             android:id="@+id/circleButtonMemorize"
-            android:layout_height="128dp"
-            android:layout_width="128dp"
-            android:layout_centerInParent="true"
-            android:layout_below="@+id/circleButtonMarathon"
-            app:cb_color="@android:color/holo_orange_light"
-            app:cb_pressedRingWidth="16dp"
-            android:src="@drawable/ic_button_memorize"/>
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/memorize"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp"
+            android:layout_below="@+id/circleButtonTrain"
+            android:layout_alignStart="@+id/circleButtonTrain" />
 
-        <at.markushi.ui.CircleButton
+        <!--<at.markushi.ui.CircleButton-->
+            <!--android:id="@+id/circleButtonMemorize"-->
+            <!--android:layout_height="128dp"-->
+            <!--android:layout_width="128dp"-->
+            <!--app:cb_color="@android:color/holo_orange_light"-->
+            <!--app:cb_pressedRingWidth="16dp"-->
+            <!--android:src="@drawable/ic_button_memorize"-->
+            <!--android:layout_below="@+id/circleButtonTrain"-->
+            <!--android:layout_alignStart="@+id/circleButtonTrain" />-->
+
+        <Button
             android:id="@+id/circleButtonAbout"
-            android:layout_height="128dp"
-            android:layout_width="128dp"
-            android:layout_centerInParent="true"
-            android:layout_below="@+id/circleButtonMemorize"
-            app:cb_color="@android:color/holo_orange_light"
-            app:cb_pressedRingWidth="16dp"
-            android:src="@drawable/ic_button_about"/>
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/about"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp"
+            android:layout_below="@+id/circleButtonMarathon"
+            android:layout_alignStart="@+id/circleButtonMarathon" />
+
+        <!--<at.markushi.ui.CircleButton-->
+            <!--android:id="@+id/circleButtonAbout"-->
+            <!--android:layout_height="128dp"-->
+            <!--android:layout_width="128dp"-->
+            <!--app:cb_color="@android:color/holo_orange_light"-->
+            <!--app:cb_pressedRingWidth="16dp"-->
+            <!--android:src="@drawable/ic_button_about"-->
+            <!--android:layout_below="@+id/circleButtonMarathon"-->
+            <!--android:layout_alignStart="@+id/circleButtonMarathon" />-->
 
 
         <com.google.android.gms.ads.AdView

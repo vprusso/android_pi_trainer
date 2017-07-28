@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -13,7 +14,7 @@ import at.markushi.ui.CircleButton;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-    CircleButton circleButtonTrain, circleButtonMarathon, circleButtonMemorize, circleButtonAbout;
+    Button circleButtonTrain, circleButtonMarathon, circleButtonMemorize, circleButtonAbout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +27,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     private void setupVariables() {
 
-        circleButtonTrain = (CircleButton)findViewById(R.id.circleButtonTrain);
+        circleButtonTrain = (Button)findViewById(R.id.circleButtonTrain);
         circleButtonTrain.setOnClickListener(this);
 
-        circleButtonMarathon = (CircleButton)findViewById(R.id.circleButtonMarathon);
+        circleButtonMarathon = (Button)findViewById(R.id.circleButtonMarathon);
         circleButtonMarathon.setOnClickListener(this);
 
-        circleButtonMemorize = (CircleButton)findViewById(R.id.circleButtonMemorize);
+        circleButtonMemorize = (Button)findViewById(R.id.circleButtonMemorize);
         circleButtonMemorize.setOnClickListener(this);
 
-        circleButtonAbout = (CircleButton)findViewById(R.id.circleButtonAbout);
+        circleButtonAbout = (Button)findViewById(R.id.circleButtonAbout);
         circleButtonAbout.setOnClickListener(this);
 
     }
